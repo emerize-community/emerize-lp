@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "EmeRize - 国境を越えて、キャリアの可能性を広げる",
-  description: "EmeRizeは、APACをつなぐ学生主導のキャリアコミュニティです。",
+  description: "EmeRizeは、マレーシアと日本をつなぐ学生主導のキャリアコミュニティです。",
 };
 
 export default function RootLayout({

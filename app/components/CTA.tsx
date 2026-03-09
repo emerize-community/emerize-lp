@@ -1,42 +1,45 @@
+import Link from "next/link";
+
 export default function CTA() {
   return (
-    <section id="contact" className="relative py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 overflow-hidden">
-      {/* 装飾的な背景要素 */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
-      </div>
-      
-      <div className="max-w-4xl mx-auto text-center relative z-10">
-        <div className="mb-8">
-          <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-semibold shadow-lg">
-            お問い合わせ
-          </span>
-        </div>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
-          まずは一度、お話ししませんか。
-        </h2>
-        <p className="text-xl sm:text-2xl text-white/90 mb-12 leading-relaxed font-light">
-          学生・企業どちらの方もお気軽にご相談ください。
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="#"
-            className="group px-10 py-5 bg-white text-indigo-600 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-2xl hover:shadow-3xl hover:scale-105 transform"
-          >
-            協賛・連携を相談する
-            <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
-          </a>
-          <a
-            href="#"
-            className="group px-10 py-5 bg-transparent text-white border-2 border-white/80 rounded-xl font-bold text-lg hover:bg-white/10 hover:border-white transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 transform backdrop-blur-sm"
-          >
-            イベントに参加する
-            <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
-          </a>
+    <section className="py-16 sm:py-20" aria-labelledby="cta-heading">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="rounded-2xl border border-emerald-500/30 bg-emerald-600 px-6 py-10 shadow-lg sm:px-10 sm:py-12">
+          <div className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between md:gap-12">
+            {/* 左：テキスト */}
+            <div className="max-w-xl">
+              <p
+                id="cta-heading"
+                className="text-sm font-medium uppercase tracking-widest text-emerald-200"
+              >
+                Contact
+              </p>
+              <h2 className="mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl">
+                マレーシア留学生の実態について、まずはお気軽に。
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-emerald-100">
+                マレーシアにどのくらいの留学生がいるのか、
+                どのような学生が学んでいるのか。
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-emerald-100">
+                まずは情報交換からでも問題ありません。
+                御社の関心や状況を伺いながら、EmeRizeが提供できる可能性をご紹介します。
+              </p>
+            </div>
+
+            {/* 右：アクション */}
+            <div className="flex flex-shrink-0">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-semibold text-emerald-600 shadow-soft transition hover:bg-emerald-50"
+              >
+                お問い合わせページへ
+                <span aria-hidden>→</span>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
-

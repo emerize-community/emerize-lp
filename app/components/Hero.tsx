@@ -1,49 +1,79 @@
-export default function Hero() {
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+
+type HeroProps = {
+  /** ヒーロー右側に表示する画像（例: /images/home/hero.jpg）。未指定なら表示しない */
+  imageSrc?: string | null;
+  imageAlt?: string;
+};
+
+export default function Hero({ imageSrc, imageAlt = "" }: HeroProps) {
+  const [imgError, setImgError] = useState(false);
+  const showImageArea = imageSrc != null;
+  const showImage = imageSrc && !imgError;
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* 装飾的な背景要素 */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
-      </div>
-      
-      <div className="max-w-7xl mx-auto text-center relative z-10">
-        <div className="mb-8">
-          <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 rounded-full text-sm font-semibold mb-6 shadow-sm">
-            APAC × キャリアコミュニティ
-          </span>
-        </div>
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-gray-900 mb-8 leading-tight tracking-tight">
-          <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-            APACから、
-          </span>
-          <br />
-          <span className="text-gray-900">キャリアの選択肢を広げる。</span>
-        </h1>
-        <p className="text-xl sm:text-2xl md:text-3xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-          海外で学ぶ日本人学生のための、
-          <br />
-          <span className="font-semibold text-gray-700">"ワクワク"</span>から始まるキャリアコミュニティ。
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a
-            href="#contact"
-            className="group w-full sm:w-auto px-10 py-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 transform"
-          >
-            協賛・連携を相談する
-            <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
-          </a>
-          <a
-            href="#contact"
-            className="group w-full sm:w-auto px-10 py-5 bg-white text-gray-900 border-2 border-gray-200 rounded-xl font-semibold text-lg hover:border-gray-300 hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform"
-          >
-            イベントに参加する
-            <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
-          </a>
+    <section className="relative overflow-hidden bg-transparent">
+      <div className="relative mx-auto max-w-6xl px-4 pb-28 pt-36 sm:px-6 sm:pb-36 sm:pt-44 lg:px-8 lg:pb-44 lg:pt-52">
+        <div
+          className={`mx-auto max-w-3xl text-center ${showImageArea ? "lg:max-w-6xl lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center lg:text-left" : ""}`}
+        >
+          <div>
+            <span className="inline-flex rounded-full border border-emerald-200/80 bg-white/90 px-4 py-2 text-sm font-medium text-emerald-700 shadow-sm backdrop-blur-sm">
+              マレーシア × 日本企業 × 学生
+            </span>
+            <h1 className="mt-8 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl">
+              <span className="block">マレーシアの学生と</span>
+              <span className="block">日本企業をつなぐ</span>
+              <span className="mt-2 block bg-gradient-to-r from-emerald-600 to-emerald-500 bg-clip-text text-transparent">
+                キャリアプラットフォーム
+              </span>
+            </h1>
+            <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-slate-600 sm:text-xl lg:mx-0">
+              マレーシアを拠点に、マレーシアで学ぶ学生と日本企業の間に
+              「出会い」と「学び」の機会を生み出し、
+              新しいキャリアの選択肢をともにひろげます。
+            </p>
+            <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
+              <Link
+                href="/company"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-700 hover:shadow-emerald-600/30 sm:w-auto"
+              >
+                企業の方はこちら
+                <span className="transition group-hover:translate-x-0.5">→</span>
+              </Link>
+              <Link
+                href="/student"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-slate-300 bg-white px-8 py-4 text-base font-semibold text-slate-700 shadow-sm transition hover:border-emerald-400 hover:bg-slate-50 hover:text-emerald-700 sm:w-auto"
+              >
+                学生の方はこちら
+                <span className="transition group-hover:translate-x-0.5">→</span>
+              </Link>
+            </div>
+          </div>
+          {showImageArea && (
+            showImage ? (
+            <div className="relative mt-12 aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-200 lg:mt-0">
+              <Image
+                src={imageSrc}
+                alt={imageAlt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
+            </div>
+          ) : (
+            <div className="relative mt-12 aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-200 lg:mt-0 flex items-center justify-center">
+              <span className="text-sm font-medium text-slate-400">/images/home/hero.jpg を配置</span>
+            </div>
+          )
+          )}
         </div>
       </div>
     </section>
   );
 }
-

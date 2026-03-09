@@ -22,7 +22,7 @@ export default function Proof() {
           </div>
           <div className="bg-gradient-to-br from-orange-50 to-white rounded-2xl p-6 lg:p-8 text-center shadow-md">
             <div className="text-4xl lg:text-5xl font-bold text-orange-600 mb-2">10+</div>
-            <div className="text-gray-700 font-medium">APAC地域</div>
+            <div className="text-gray-700 font-medium">マレーシア拠点</div>
           </div>
         </div>
 
