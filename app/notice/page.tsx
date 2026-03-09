@@ -1,43 +1,45 @@
 import type { Metadata } from "next";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import NoticeCard from "../components/NoticeCard";
+import { notices } from "../../lib/data/notices";
+import PageHero from "../components/PageHero";
+import { PAGE_IMAGES } from "../../lib/page-images";
 
 export const metadata: Metadata = {
-  title: "電子公告 - EmeRize",
-  description: "EmeRizeの電子公告ページ",
-  robots: {
-    index: false,
-    follow: false,
-  },
+  title: "お知らせ - EmeRize",
+  description: "EmeRizeからのイベント情報や活動レポート",
 };
 
 export default function NoticePage() {
   return (
-    <main className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="bg-white rounded-2xl shadow-md p-8 lg:p-12">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">電子公告</h1>
-          
-          <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
-            <p>
-              このページは、EmeRizeの電子公告を掲載するページです。
-            </p>
-            
-            <section className="mt-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">公告事項</h2>
-              <p className="text-gray-600">
-                現在、公告事項はございません。
-              </p>
-            </section>
+    <div className="min-h-screen bg-slate-50 text-slate-900">
+      <Header />
+      <main className="mx-auto max-w-5xl px-4 pb-16 pt-24 sm:px-6 sm:pt-28 lg:px-8 lg:pt-32">
+        <PageHero imageSrc={PAGE_IMAGES.noticeHero} imageAlt="お知らせ" imageAspect="wide">
+          <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            お知らせ
+          </h1>
+          <p className="mt-3 text-sm text-slate-600">
+            EmeRizeからのイベント情報や活動レポートなどをお届けします。
+          </p>
+        </PageHero>
 
-            <section className="mt-8 pt-8 border-t border-gray-200">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">お問い合わせ</h2>
-              <p className="text-gray-600">
-                電子公告に関するお問い合わせは、<a href="/#contact" className="text-blue-600 hover:underline">お問い合わせフォーム</a>よりご連絡ください。
-              </p>
-            </section>
+        <section className="mt-12">
+          <div className="grid gap-5 md:grid-cols-2">
+            {notices.map((n) => (
+              <NoticeCard
+                key={n.id}
+                title={n.title}
+                date={n.date}
+                summary={n.summary}
+                href={n.href}
+              />
+            ))}
           </div>
-        </div>
-      </div>
-    </main>
+        </section>
+      </main>
+      <Footer />
+    </div>
   );
 }
-

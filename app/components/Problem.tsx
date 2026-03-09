@@ -7,7 +7,7 @@ export default function Problem() {
             課題
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-4">
-            日本人海外大学生向け
+            マレーシアで学ぶ日本人学生向け
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
         </div>
@@ -19,7 +19,7 @@ export default function Problem() {
                   <span className="text-white font-bold text-xl">1</span>
                 </div>
                 <p className="text-xl text-gray-800 leading-relaxed pt-2 font-medium">
-                  アジア留学・海外就職に関する情報がまだ少ない
+                  マレーシア留学・就職に関する情報がまだ少ない
                 </p>
               </li>
               <li className="flex items-start group">
