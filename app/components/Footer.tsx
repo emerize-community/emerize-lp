@@ -1,6 +1,22 @@
 import Link from "next/link";
 import { COMPANY } from "../../lib/data/company";
 
+type ContactItem = {
+  label: string;
+  href: string;
+  text: string;
+  external?: boolean;
+};
+
+const contactItems: ContactItem[] = [
+  {
+    label: "Email",
+    href: "mailto:weareemerize@gmail.com",
+    text: "weareemerize@gmail.com",
+    external: true,
+  },
+];
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -12,10 +28,6 @@ export default function Footer() {
     { label: "メンバー", href: "/members" },
     { label: "お知らせ", href: "/notice" },
     { label: "お問い合わせ", href: "/contact" },
-  ];
-
-  const contactItems = [
-    { label: "メール", href: `mailto:${COMPANY.email}`, text: COMPANY.email },
   ];
 
   const legalLinks = [
