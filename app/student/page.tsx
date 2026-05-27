@@ -81,7 +81,7 @@ export default function StudentPage() {
         <Header />
       <main className="pt-20">
         <PageHero imageSrc={PAGE_IMAGES.studentHero} imageAlt="学生向け" imageAspect="wide">
-          <p className="text-sm font-medium uppercase tracking-widest text-emerald-600">For Students</p>
+          <p className="eyebrow">学生向け</p>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
             学生向けのご案内
           </h1>
@@ -93,16 +93,14 @@ export default function StudentPage() {
 
         <section className="py-16 sm:py-24" aria-labelledby="what-we-offer-heading">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">
-              WHAT WE OFFER
-            </p>
+            <p className="eyebrow">提供内容</p>
             <h2
               id="what-we-offer-heading"
               className="mt-4 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl"
             >
               EmeRizeで得られる機会
             </h2>
-            <div className="mt-12 grid gap-6 sm:mt-16 sm:gap-8 md:grid-cols-2">
+            <div className="mt-12 grid items-stretch gap-6 sm:mt-16 sm:gap-8 md:grid-cols-2">
               {[
                 {
                   title: "キャリアイベント",
@@ -143,7 +141,7 @@ export default function StudentPage() {
               ].map((item) => (
                 <article
                   key={item.title}
-                  className="rounded-2xl border border-slate-200/80 bg-white/90 p-8 shadow-sm backdrop-blur sm:p-10"
+                  className="flex h-full min-w-0 flex-col rounded-2xl border border-slate-200/80 bg-white/90 p-8 shadow-sm backdrop-blur sm:p-10"
                 >
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600">
                     {item.icon}
@@ -162,33 +160,20 @@ export default function StudentPage() {
 
         <section className="py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="rounded-xl bg-emerald-600 p-10 shadow-soft-lg sm:p-12">
-              <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-                公式LINE・Instagram
+            <div className="rounded-2xl border border-slate-200 bg-white p-10 shadow-sm sm:p-12">
+              <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+                お問い合わせ
               </h2>
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-emerald-100">
-                まずは軽く話を聞いてみたい、という方も大歓迎。LINEやInstagramで気軽にフォロー・ご連絡ください。
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600">
+                コミュニティ参加やイベントに関するご質問は、お問い合わせフォームよりご連絡ください。
               </p>
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <a
-                  href="https://line.me/R/ti/p/@emerize"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-4 text-base font-semibold text-emerald-600 shadow-soft transition hover:bg-emerald-50"
-                >
-                  公式LINEで友だち追加
-                  <span>→</span>
-                </a>
-                <a
-                  href="https://www.instagram.com/emerize"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-emerald-200 px-6 py-4 text-base font-semibold text-white transition hover:bg-emerald-500"
-                >
-                  公式Instagram
-                  <span>→</span>
-                </a>
-              </div>
+              <a
+                href="/contact"
+                className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-emerald-600"
+              >
+                お問い合わせ
+                <span aria-hidden>→</span>
+              </a>
             </div>
           </div>
         </section>

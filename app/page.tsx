@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Mission from "./components/Mission";
+import OurActivities from "./components/OurActivities";
 import AudienceSplit from "./components/AudienceSplit";
 import Programs from "./components/Programs";
 import Footer from "./components/Footer";
@@ -84,6 +85,7 @@ export default function Home() {
       <main className="pt-20">
         <Hero imageSrc={PAGE_IMAGES.homeHero} imageAlt="マレーシアの学生と日本企業をつなぐ" />
         <Mission />
+        <OurActivities />
         <AudienceSplit />
         <Programs />
       </main>

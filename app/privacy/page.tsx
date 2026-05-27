@@ -10,7 +10,7 @@ export default function PrivacyPage() {
       <Header />
       <main className="pt-20">
         <PageHero imageSrc={PAGE_IMAGES.privacyHero} imageAlt="プライバシーポリシー" imageAspect="wide">
-          <p className="text-sm font-medium uppercase tracking-widest text-emerald-600">Privacy Policy</p>
+          <p className="eyebrow">プライバシーポリシー</p>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
             プライバシーポリシー
           </h1>
@@ -101,7 +101,7 @@ export default function PrivacyPage() {
               </p>
               <p className="mt-4 text-base font-medium text-slate-900">EmeRize株式会社</p>
               <p className="mt-1 text-base text-slate-700">
-                Email：
+                メール：
                 <a
                   href={`mailto:${COMPANY.email}`}
                   className="text-emerald-600 hover:text-emerald-700"

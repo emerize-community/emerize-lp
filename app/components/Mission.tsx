@@ -3,9 +3,7 @@ export default function Mission() {
     <section className="relative bg-transparent py-28 sm:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-24">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-600">
-            Mission & Vision
-          </p>
+          <p className="eyebrow">ミッション・ビジョン</p>
           <h2 className="mt-6 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl">
             <span className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
               キャリアの「きっかけ」を
@@ -25,8 +23,8 @@ export default function Mission() {
               <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-600 text-xl font-bold text-white shadow-lg shadow-emerald-600/30">
                 M
               </span>
-              <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-emerald-600">
-                Mission
+              <p className="mt-6 text-xs font-bold tracking-[0.12em] text-emerald-600">
+                ミッション
               </p>
               <h3 className="mt-4 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
                 新たなキャリア文化の循環の構築
@@ -46,8 +44,8 @@ export default function Mission() {
               <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-600 text-xl font-bold text-white shadow-lg shadow-emerald-600/30">
                 V
               </span>
-              <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-emerald-600">
-                Vision
+              <p className="mt-6 text-xs font-bold tracking-[0.12em] text-emerald-600">
+                ビジョン
               </p>
               <h3 className="mt-4 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
                 ここから始まる「きっかけ」をすべての学生へ

@@ -11,7 +11,7 @@ export default function Flow() {
     <section className="py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-widest text-emerald-600">Flow</p>
+          <p className="eyebrow">ご利用の流れ</p>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             企業さまとのご一緒の流れ
           </h2>
@@ -25,7 +25,7 @@ export default function Flow() {
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-sm font-semibold text-white">
                 {s.step}
               </div>
-              <div>
+              <div className="min-w-0 flex-1">
                 <p className="text-lg font-semibold text-slate-900">{s.title}</p>
                 <p className="mt-2 text-base leading-relaxed text-slate-600">{s.body}</p>
               </div>

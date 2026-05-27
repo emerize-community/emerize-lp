@@ -84,27 +84,26 @@ export default function CompanyPage() {
         <Header />
       <main className="pt-20">
         <PageHero imageSrc={PAGE_IMAGES.companyHero} imageAlt="企業向け" imageAspect="wide">
-          <p className="text-sm font-medium uppercase tracking-widest text-emerald-600">For Company</p>
+          <p className="eyebrow">企業向け</p>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
             企業向けのご案内
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
-            マレーシアで学ぶ学生コミュニティとの接点づくりから、
-            採用ブランディング・イベント実施・市場調査まで、
-            幅広くご支援します。
+            マレーシア在住の大学生を対象に、キャリアコミュニティ運営、オンラインイベント企画、
+            学生マーケティングプロジェクト、市場調査などの教育・コミュニティ事業を提供しています。
           </p>
           <ul className="mt-8 flex flex-wrap gap-6 text-sm text-slate-600">
             <li className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-slate-400" />
-              学生コミュニティとの接点
+              学生キャリアコミュニティ
             </li>
             <li className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-slate-400" />
-              イベント・採用ブランディング
+              オンラインイベント企画
             </li>
             <li className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-slate-400" />
-              市場調査・リサーチ
+              マーケティング・市場調査
             </li>
           </ul>
         </PageHero>
