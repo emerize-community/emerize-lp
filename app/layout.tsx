@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EmeRize - 国境を越えて、キャリアの可能性を広げる",
-  description: "EmeRizeは、マレーシアと日本をつなぐ学生主導のキャリアコミュニティです。",
+  title: "EmeRize | 教育・コミュニティ事業",
+  description:
+    "株式会社EmeRizeは、海外の大学生を対象に、キャリアコミュニティ、オンラインイベント、マーケティングプロジェクト、市場調査などの教育・コミュニティ事業を展開しています。",
 };
 
 export default function RootLayout({

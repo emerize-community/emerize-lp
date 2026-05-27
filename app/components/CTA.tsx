@@ -7,12 +7,12 @@ export default function CTA() {
         <div className="rounded-2xl border border-emerald-500/30 bg-emerald-600 px-6 py-10 shadow-lg sm:px-10 sm:py-12">
           <div className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between md:gap-12">
             {/* 左：テキスト */}
-            <div className="max-w-xl">
+            <div className="min-w-0 max-w-xl">
               <p
                 id="cta-heading"
-                className="text-sm font-medium uppercase tracking-widest text-emerald-200"
+                className="text-sm font-medium tracking-wider text-emerald-200"
               >
-                Contact
+                お問い合わせ
               </p>
               <h2 className="mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl">
                 マレーシア留学生の実態について、まずはお気軽に。
@@ -23,7 +23,7 @@ export default function CTA() {
               </p>
               <p className="mt-4 text-base leading-relaxed text-emerald-100">
                 まずは情報交換からでも問題ありません。
-                御社の関心や状況を伺いながら、EmeRizeが提供できる可能性をご紹介します。
+                御社の関心や状況を伺いながら、EmeRizeが提供できるサービス内容をご説明します。
               </p>
             </div>
 

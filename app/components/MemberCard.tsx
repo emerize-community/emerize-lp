@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import type { MemberRole } from "../../lib/data/members";
+import { MEMBER_ROLE_LABELS } from "../../lib/data/members";
 
 type MemberCardProps = {
   name: string;
   title: string;
-  role: string;
+  role: MemberRole;
   affiliation?: string;
   bio: string;
   image: string;
@@ -31,8 +33,8 @@ export default function MemberCard({
   const [imgError, setImgError] = useState(false);
 
   return (
-    <div className="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-soft transition hover:shadow-soft-lg">
-      <div className="relative h-48 w-full bg-slate-100">
+    <div className="flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-soft transition hover:shadow-soft-lg">
+      <div className="relative h-48 w-full shrink-0 bg-slate-100">
         {!imgError ? (
           <Image
             src={image}
@@ -48,8 +50,10 @@ export default function MemberCard({
           </span>
         )}
       </div>
-      <div className="flex flex-1 flex-col p-6">
-        <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600">{role}</p>
+      <div className="flex min-w-0 flex-1 flex-col p-6">
+        <p className="text-xs font-semibold tracking-wider text-emerald-600">
+          {MEMBER_ROLE_LABELS[role]}
+        </p>
         <p className="mt-2 text-lg font-semibold text-slate-900">{name}</p>
         <p className="text-sm text-slate-600">{title}</p>
         {affiliation && (

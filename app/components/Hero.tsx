@@ -18,14 +18,19 @@ export default function Hero({ imageSrc, imageAlt = "" }: HeroProps) {
   return (
     <section className="relative overflow-hidden bg-transparent">
       <div className="relative mx-auto max-w-6xl px-4 pb-28 pt-36 sm:px-6 sm:pb-36 sm:pt-44 lg:px-8 lg:pb-44 lg:pt-52">
-        <div
-          className={`mx-auto max-w-3xl text-center ${showImageArea ? "lg:max-w-6xl lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center lg:text-left" : ""}`}
-        >
-          <div>
+        <div className="mx-auto w-full">
+          <div
+            className={
+              showImageArea
+                ? "mx-auto w-full max-w-6xl lg:grid lg:grid-cols-2 lg:items-center lg:gap-16 lg:text-left"
+                : "mx-auto w-full max-w-3xl text-center"
+            }
+          >
+            <div className="min-w-0">
             <span className="inline-flex rounded-full border border-emerald-200/80 bg-white/90 px-4 py-2 text-sm font-medium text-emerald-700 shadow-sm backdrop-blur-sm">
               マレーシア × 日本企業 × 学生
             </span>
-            <h1 className="mt-8 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="mt-8 text-balance text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl">
               <span className="block">マレーシアの学生と</span>
               <span className="block">日本企業をつなぐ</span>
               <span className="mt-2 block bg-gradient-to-r from-emerald-600 to-emerald-500 bg-clip-text text-transparent">
@@ -54,25 +59,27 @@ export default function Hero({ imageSrc, imageAlt = "" }: HeroProps) {
               </Link>
             </div>
           </div>
-          {showImageArea && (
-            showImage ? (
-            <div className="relative mt-12 aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-200 lg:mt-0">
-              <Image
-                src={imageSrc}
-                alt={imageAlt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
-              />
-            </div>
-          ) : (
-            <div className="relative mt-12 aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-200 lg:mt-0 flex items-center justify-center">
-              <span className="text-sm font-medium text-slate-400">/images/home/hero.jpg を配置</span>
-            </div>
-          )
-          )}
-        </div>
+            {showImageArea &&
+              (showImage ? (
+                <div className="relative mt-12 aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-200 lg:mt-0">
+                  <Image
+                    src={imageSrc}
+                    alt={imageAlt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
+                  />
+                </div>
+              ) : (
+                <div className="relative mt-12 flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-2xl bg-slate-200 lg:mt-0">
+                  <span className="text-sm font-medium text-slate-400">
+                    `public/images/home/hero.jpg` を配置すると表示されます
+                  </span>
+                </div>
+              ))}
+          </div>
+        </div>        
       </div>
     </section>
   );

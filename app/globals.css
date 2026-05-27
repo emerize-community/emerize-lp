@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  overflow-x: clip;
+}
+
 :root {
   --background: #f8fafc;
   --foreground: #0f172a;
@@ -25,6 +29,17 @@ body {
   font-size: 16px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  line-break: strict;
+}
+
+/* セクション見出しの英字 eyebrow 用（日本語ラベルには uppercase を使わない） */
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--green-primary);
 }
 
 ::selection {
